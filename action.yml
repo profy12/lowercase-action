@@ -1,4 +1,4 @@
-name: 'lowercase'
+name: 'to-lowercase'
 description: 'lower case a text'
 inputs:
   text: 
