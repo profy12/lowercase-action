@@ -1,0 +1,19 @@
+name: 'Lower case action'
+description: 'lower case a text'
+inputs:
+  text: 
+    description: 'the text to lower case'
+    required: true
+    default: 'Hello DevOps'
+outputs:
+  text:
+    description: 'The text in lower case'
+    value: ${{ steps.lower-step.outputs.text }}
+runs:
+  using: "composite"
+  steps:
+    - name: Start to lower text ${{ inputs.text }}
+      run: echo Hello ${{ inputs.text }} | tr '[:upper:]' '[:lower:]' >> $GITHUB_OUTPUT
+      shell: bash
+      id: lower-step
+
