@@ -7,7 +7,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    name: A test job to cowsay
+    name: A test job for tr
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -17,7 +17,7 @@ jobs:
       uses: ./
       with:
         text: |
-          This is cowsay
+          Hello DevOps
 #    - name: Test cowsay on the comment
 #      uses: ./
 #      with:

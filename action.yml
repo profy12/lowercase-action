@@ -13,7 +13,8 @@ runs:
   using: "composite"
   steps:
     - name: Start to lower text ${{ inputs.text }}
-      run: echo Hello ${{ inputs.text }} | tr '[:upper:]' '[:lower:]' >> $GITHUB_OUTPUT
+      run: |
+        echo '${{ inputs.text }}' | tr '[:upper:]' '[:lower:]' >> $GITHUB_OUTPUT
       shell: bash
       id: lower-step
 
