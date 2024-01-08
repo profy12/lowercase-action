@@ -1,0 +1,38 @@
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: A test job to cowsay
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 1
+    - name: Test just output the message
+      uses: ./
+      with:
+        text: |
+          This is cowsay
+#    - name: Test cowsay on the comment
+#      uses: ./
+#      with:
+#        message: 'Hello, World with random'
+#        cow: 'random'
+#        cowsay_on_comment: true
+#      env:
+#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#    - name: Test set output pipeline
+#      id: cowsay_output_id
+#      uses: ./
+#      with:
+#        message: 'Hello, World'
+#        cow: 'gopher'
+#        cowsay_to_output: 'cowsay'
+#    - name: Print output
+#      run: |
+#        echo "${{ steps.cowsay_output_id.outputs.cowsay }}"
