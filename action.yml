@@ -5,6 +5,10 @@ inputs:
     description: 'the text to lower case'
     required: true
     default: 'Hello DevOps'
+branding:
+  icon: chevron-down
+  color: gray-dark
+
 outputs:
   text:
     description: 'The text in lower case'
