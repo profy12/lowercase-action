@@ -15,9 +15,12 @@ jobs:
         fetch-depth: 1
     - name: Test just output the message
       uses: ./
+      id: lowered
       with:
         text: |
           Hello DevOps
+    - name: Debug our lowered text message
+      run: echo "${{ steps.lowered.outputs.text }}"
 #    - name: Test cowsay on the comment
 #      uses: ./
 #      with:
