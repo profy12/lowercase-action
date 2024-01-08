@@ -14,7 +14,8 @@ runs:
   steps:
     - name: Start to lower text ${{ inputs.text }}
       run: |
-        echo '${{ inputs.text }}' | tr '[:upper:]' '[:lower:]' >> $GITHUB_OUTPUT
+        echo "Coucou"
+#        echo '${{ inputs.text }}' | tr '[:upper:]' '[:lower:]' >> $GITHUB_OUTPUT
       shell: bash
       id: lower-step
 
