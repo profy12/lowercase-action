@@ -24,7 +24,7 @@ jobs:
       with:
         fetch-depth: 1
     - name: Test just output the message
-      uses: to-lowercase
+      uses: profy12/lowercase-action@0.6
       id: lowered
       with:
         text: |
