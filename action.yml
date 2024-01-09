@@ -16,9 +16,11 @@ outputs:
 runs:
   using: "composite"
   steps:
+    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+      shell: bash
     - name: Start to lower text ${{ inputs.text }}
       run: |
-        ./lower.sh 'text=${{ inputs.text }}' >> $GITHUB_OUTPUT
+        lower.sh 'text=${{ inputs.text }}' >> $GITHUB_OUTPUT
       shell: bash
       id: lower-step
 
